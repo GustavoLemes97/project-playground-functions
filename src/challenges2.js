@@ -27,17 +27,19 @@ function checkArray(arrayNumbers) {
   return false;
 }
 
-function checkRepeatNumbers(arrNumbers) {
-  let number;
-  for (let index1 = 0; index1 < arrNumbers.length; index1 += 1) {
-    let countNumber = 0;
-    number = arrNumbers[index1];
-    for (let index2 = 0; index2 < arrNumbers.length; index2 += 1) {
-      if (number === arrNumbers[index2]) {
-        countNumber += 1;
-      }
+function checkNumber(number, arrNumbers) {
+  let count = 0;
+  for (let index = 0; index < arrNumbers.length; index += 1) {
+    if (number === arrNumbers[index]) {
+      count += 1;
     }
-    if (countNumber >= 3) {
+  }
+  return count;
+}
+
+function checkRepeatNumbers(arrNumbers) {
+  for (let index = 0; index < arrNumbers.length; index += 1) {
+    if (checkNumber(arrNumbers[index], arrNumbers) >= 3) {
       return true;
     }
   }
@@ -63,9 +65,7 @@ function generatePhoneNumber(phoneNumbers) {
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
-  if ((lineA > lineB + lineC || lineA < Math.abs(lineB - lineC))
-    || (lineB > lineA + lineC || lineB < Math.abs(lineA - lineC))
-    || (lineC > lineA + lineB || lineC < Math.abs(lineA - lineB))) {
+  if ((lineA > lineB + lineC || lineA < Math.abs(lineB - lineC))) {
     return false;
   }
   return true;
