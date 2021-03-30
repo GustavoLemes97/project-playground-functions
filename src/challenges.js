@@ -15,7 +15,8 @@ function splitSentence(string) {
 
 // Desafio 4
 function concatName(arrayString) {
-  return arrayString[arrayString.length - 1] + ', ' + arrayString[0];
+  let stringConc = arrayString[arrayString.length - 1] + ', ' + arrayString[0];
+  return stringConc;
 }
 
 // Desafio 5
@@ -24,6 +25,16 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
+function highestNumber(arrayNumbers) {
+  let maxNumber = arrayNumbers[0];
+  for (let index = 1; index < arrayNumbers.length; index += 1) {
+    if (maxNumber < arrayNumbers[index]) {
+      maxNumber = arrayNumbers[index];
+    }
+  }
+  return maxNumber;
+}
+
 function highestCount(arrayNumbers) {
   let maxNumber = highestNumber(arrayNumbers);
   let count = 0;
@@ -35,16 +46,6 @@ function highestCount(arrayNumbers) {
   return count;
 }
 
-function highestNumber(arrayNumbers) {
-  let maxNumber = arrayNumbers[0];
-  for (let index = 1; index < arrayNumbers.length; index += 1) {
-    if (maxNumber < arrayNumbers[index]) {
-      maxNumber = arrayNumbers[index];
-    }
-  }
-  return maxNumber;
-}
-
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
   cat1 = Math.abs(mouse - cat1);
@@ -53,9 +54,7 @@ function catAndMouse(mouse, cat1, cat2) {
     return 'cat1';
   } else if (cat2 < cat1) {
     return 'cat2';
-  } else {
-    return 'os gatos trombam e o rato foge';
-  }
+  } else return 'os gatos trombam e o rato foge';
 }
 
 // Desafio 8
@@ -79,22 +78,22 @@ function encode(stringToEncode) {
   for (let index = 0; index < stringToEncode.length; index += 1) {
     switch (stringToEncode[index]) {
       case 'a':
-        stringToEncode = stringToEncode.replace('a', '1');
-        break;
+      stringToEncode = stringToEncode.replace('a', '1');
+      break;
       case 'e':
-        stringToEncode = stringToEncode.replace('e', '2');
-        break;
+      stringToEncode = stringToEncode.replace('e', '2');
+      break;
       case 'i':
-        stringToEncode = stringToEncode.replace('i', '3');
-        break;
+      stringToEncode = stringToEncode.replace('i', '3');
+      break;
       case 'o':
-        stringToEncode = stringToEncode.replace('o', '4');
-        break;
+      stringToEncode = stringToEncode.replace('o', '4');
+      break;
       case 'u':
-        stringToEncode = stringToEncode.replace('u', '5');
-        break;
+      stringToEncode = stringToEncode.replace('u', '5');
+      break;
       default:
-        break;
+      break;
     }
   }
   return stringToEncode;
