@@ -19,11 +19,15 @@ function techList(arrTech, name) {
 
 // Desafio 11
 function generatePhoneNumber(arrPhoneNumbers) {
+  if(arrPhoneNumbers.length !== 11){
+    return 'Array com tamanho incorreto.';
+  }
   if (checkArray(arrPhoneNumbers) || checkRepeatNumbers(arrPhoneNumbers)) {
     return 'não é possível gerar um número de telefone com esses valores';
   }
-  return '(' + arrPhoneNumbers[0] + arrPhoneNumbers[1] + ')' + ' ' + arrPhoneNumbers[2] + arrPhoneNumbers[3] + arrPhoneNumbers[4] + arrPhoneNumbers[5] + arrPhoneNumbers[6] + '-' + arrPhoneNumbers[7] + arrPhoneNumbers[8] + arrPhoneNumbers[9] + arrPhoneNumbers[10];
-
+  return '(' + arrPhoneNumbers[0] + arrPhoneNumbers[1] + ')' + ' ' + arrPhoneNumbers[2] 
+  + arrPhoneNumbers[3] + arrPhoneNumbers[4] + arrPhoneNumbers[5] + arrPhoneNumbers[6] + '-' 
+  + arrPhoneNumbers[7] + arrPhoneNumbers[8] + arrPhoneNumbers[9] + arrPhoneNumbers[10];
 }
 
 function checkArray(arrayNumbers) {
