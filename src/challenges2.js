@@ -1,5 +1,5 @@
 // Desafio 10
-function techList(arrTech, name) {
+function techList(arrTech, myName) {
   let lista = [];
   let dados = {};
 
@@ -10,7 +10,7 @@ function techList(arrTech, name) {
     arrTech = arrTech.sort();
     dados = {
       tech: arrTech[index],
-      name: name,
+      name: myName,
     };
     lista.push(dados);
   }
@@ -51,18 +51,16 @@ function generatePhoneNumber(arrPhoneNumbers) {
   if (checkArray(arrPhoneNumbers) || checkRepeatNumbers(arrPhoneNumbers)) {
     return 'não é possível gerar um número de telefone com esses valores';
   }
-  return '(' + arrPhoneNumbers[0] + arrPhoneNumbers[1] + ')' + ' ' + arrPhoneNumbers[2] 
-  + arrPhoneNumbers[3] + arrPhoneNumbers[4] + arrPhoneNumbers[5] + arrPhoneNumbers[6] + '-' 
-  + arrPhoneNumbers[7] + arrPhoneNumbers[8] + arrPhoneNumbers[9] + arrPhoneNumbers[10];
+  return `(${arrPhoneNumbers[0]}${arrPhoneNumbers[1]}) 
+  ${arrPhoneNumbers[2]}${arrPhoneNumbers[3]}${arrPhoneNumbers[4]}${arrPhoneNumbers[5]}${arrPhoneNumbers[6]}-
+  ${arrPhoneNumbers[7]}${arrPhoneNumbers[8]}${arrPhoneNumbers[9]}${arrPhoneNumbers[10]}`;
 }
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
-  if (lineA > lineB + lineC || lineA < Math.abs(lineB - lineC)) {
-    return false;
-  } else if (lineB > lineA + lineC || lineB < Math.abs(lineA - lineC)) {
-    return false;
-  } else if (lineC > lineA + lineB || lineC < Math.abs(lineA - lineB)) {
+  if ((lineA > lineB + lineC || lineA < Math.abs(lineB - lineC)) 
+    || (lineB > lineA + lineC || lineB < Math.abs(lineA - lineC)) 
+    || (lineC > lineA + lineB || lineC < Math.abs(lineA - lineB))) {
     return false;
   }
   return true;
@@ -74,13 +72,13 @@ function hydrate(stringBar) {
   stringBar = stringBar.match(/[1-9]+/g);
 
   for (let index = 0; index < stringBar.length; index += 1) {
-    count = count + parseInt(stringBar[index]);
+    count = count + parseInt(stringBar[index], 10);
   }
 
   if (count === 1) {
-    return count + ' copo de água';
+    return `${count} copos de água`;
   }
-  return count + ' copos de água';
+  return `${count} copos de água`;
 }
 
 module.exports = {
