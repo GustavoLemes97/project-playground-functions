@@ -24,8 +24,25 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(arrayNumbers) {
+  let maxNumber = highestNumber(arrayNumbers);
+  let count = 0;
+  for(let index = 0; index < arrayNumbers.length; index += 1){
+    if(maxNumber === arrayNumbers[index]){
+      count += 1;
+    }
+  }
+  return count;
+}
+
+function highestNumber(arrayNumbers) {
+  let maxNumber = arrayNumbers[0];
+  for(let index = 1; index < arrayNumbers.length; index += 1){
+    if(maxNumber < arrayNumbers[index]){
+      maxNumber = arrayNumbers[index];
+    }
+  }
+  return maxNumber;
 }
 
 // Desafio 7
@@ -56,5 +73,6 @@ module.exports = {
   fizzBuzz,
   footballPoints,
   highestCount,
+  highestNumber,
   splitSentence,
 };
