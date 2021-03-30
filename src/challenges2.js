@@ -45,21 +45,26 @@ function checkRepeatNumbers(arrNumbers) {
 }
 
 function generatePhoneNumber(arrPhoneNumbers) {
+  let phonePt01;
+  let phonePt02;
+  let phonePt03;
+
   if (arrPhoneNumbers.length !== 11) {
     return 'Array com tamanho incorreto.';
   }
   if (checkArray(arrPhoneNumbers) || checkRepeatNumbers(arrPhoneNumbers)) {
     return 'não é possível gerar um número de telefone com esses valores';
   }
-  return `(${arrPhoneNumbers[0]}${arrPhoneNumbers[1]}) 
-  ${arrPhoneNumbers[2]}${arrPhoneNumbers[3]}${arrPhoneNumbers[4]}${arrPhoneNumbers[5]}${arrPhoneNumbers[6]}-
-  ${arrPhoneNumbers[7]}${arrPhoneNumbers[8]}${arrPhoneNumbers[9]}${arrPhoneNumbers[10]}`;
+  phonePt01 = `(${arrPhoneNumbers[0]}${arrPhoneNumbers[1]}) ${arrPhoneNumbers[2]}${arrPhoneNumbers[3]}`;
+  phonePt02 = `${arrPhoneNumbers[4]}${arrPhoneNumbers[5]}${arrPhoneNumbers[6]}-${arrPhoneNumbers[7]}`;
+  phonePt03 = `${arrPhoneNumbers[8]}${arrPhoneNumbers[9]}${arrPhoneNumbers[10]}`;
+  return  `${phonePt01}${phonePt02}${phonePt03}`;
 }
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
-  if ((lineA > lineB + lineC || lineA < Math.abs(lineB - lineC)) 
-    || (lineB > lineA + lineC || lineB < Math.abs(lineA - lineC)) 
+  if ((lineA > lineB + lineC || lineA < Math.abs(lineB - lineC))
+    || (lineB > lineA + lineC || lineB < Math.abs(lineA - lineC))
     || (lineC > lineA + lineB || lineC < Math.abs(lineA - lineB))) {
     return false;
   }
@@ -72,11 +77,11 @@ function hydrate(stringBar) {
   stringBar = stringBar.match(/[1-9]+/g);
 
   for (let index = 0; index < stringBar.length; index += 1) {
-    count = count + parseInt(stringBar[index], 10);
+    count += parseInt(stringBar[index], 10);
   }
 
   if (count === 1) {
-    return `${count} copos de água`;
+    return `${count} copo de água`;
   }
   return `${count} copos de água`;
 }
