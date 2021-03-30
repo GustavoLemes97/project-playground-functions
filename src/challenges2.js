@@ -44,21 +44,21 @@ function checkRepeatNumbers(arrNumbers) {
   return false;
 }
 
-function generatePhoneNumber(arrPhoneNumbers) {
+function generatePhoneNumber(phoneNumbers) {
   let phonePt01;
   let phonePt02;
   let phonePt03;
 
-  if (arrPhoneNumbers.length !== 11) {
+  if (phoneNumbers.length !== 11) {
     return 'Array com tamanho incorreto.';
   }
-  if (checkArray(arrPhoneNumbers) || checkRepeatNumbers(arrPhoneNumbers)) {
+  if (checkArray(phoneNumbers) || checkRepeatNumbers(phoneNumbers)) {
     return 'não é possível gerar um número de telefone com esses valores';
   }
-  phonePt01 = `(${arrPhoneNumbers[0]}${arrPhoneNumbers[1]}) ${arrPhoneNumbers[2]}${arrPhoneNumbers[3]}`;
-  phonePt02 = `${arrPhoneNumbers[4]}${arrPhoneNumbers[5]}${arrPhoneNumbers[6]}-${arrPhoneNumbers[7]}`;
-  phonePt03 = `${arrPhoneNumbers[8]}${arrPhoneNumbers[9]}${arrPhoneNumbers[10]}`;
-  return  `${phonePt01}${phonePt02}${phonePt03}`;
+  phonePt01 = `(${phoneNumbers[0]}${phoneNumbers[1]}) ${phoneNumbers[2]}${phoneNumbers[3]}`;
+  phonePt02 = `${phoneNumbers[4]}${phoneNumbers[5]}${phoneNumbers[6]}-${phoneNumbers[7]}`;
+  phonePt03 = `${phoneNumbers[8]}${phoneNumbers[9]}${phoneNumbers[10]}`;
+  return `${phonePt01}${phonePt02}${phonePt03}`;
 }
 
 // Desafio 12
