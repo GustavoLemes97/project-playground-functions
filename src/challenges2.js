@@ -92,5 +92,6 @@ module.exports = {
   checkArray,
   techList,
   hydrate,
+  checkNumber,
   triangleCheck,
 };

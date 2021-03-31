@@ -59,69 +59,55 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
+function changeToFizzBuzz(number) {
+  let numberChanged;
+  if (number % 3 === 0 && number % 5 === 0) {
+    numberChanged = 'fizzBuzz';
+  } else if (number % 3 === 0) {
+    numberChanged = 'fizz';
+  } else if (number % 5 === 0) {
+    numberChanged = 'buzz';
+  } else {
+    numberChanged = 'bug!';
+  }
+  return numberChanged;
+}
+
 function fizzBuzz(arrayNumbers) {
   for (let index = 0; index < arrayNumbers.length; index += 1) {
-    if (arrayNumbers[index] % 3 === 0 && arrayNumbers[index] % 5 === 0) {
-      arrayNumbers[index] = 'fizzBuzz';
-    } else if (arrayNumbers[index] % 3 === 0) {
-      arrayNumbers[index] = 'fizz';
-    } else if (arrayNumbers[index] % 5 === 0) {
-      arrayNumbers[index] = 'buzz';
-    } else {
-      arrayNumbers[index] = 'bug!';
-    }
+    arrayNumbers[index] = changeToFizzBuzz(arrayNumbers[index]);
   }
   return arrayNumbers;
 }
 
 // Desafio 9
 function encode(stringToEncode) {
-  for (let index = 0; index < stringToEncode.length; index += 1) {
-    switch (stringToEncode[index]) {
-    case 'a':
-      stringToEncode = stringToEncode.replace('a', '1');
-      break;
-    case 'e':
-      stringToEncode = stringToEncode.replace('e', '2');
-      break;
-    case 'i':
-      stringToEncode = stringToEncode.replace('i', '3');
-      break;
-    case 'o':
-      stringToEncode = stringToEncode.replace('o', '4');
-      break;
-    case 'u':
-      stringToEncode = stringToEncode.replace('u', '5');
-      break;
-    default:
-      break;
-    }
-  }
+  let changeTo1 = /a/gi;
+  let changeTo2 = /e/gi;
+  let changeTo3 = /i/gi;
+  let changeTo4 = /o/gi;
+  let changeTo5 = /u/gi;
+
+  stringToEncode = stringToEncode.replace(changeTo1, '1');
+  stringToEncode = stringToEncode.replace(changeTo2, '2');
+  stringToEncode = stringToEncode.replace(changeTo3, '3');
+  stringToEncode = stringToEncode.replace(changeTo4, '4');
+  stringToEncode = stringToEncode.replace(changeTo5, '5');
   return stringToEncode;
 }
 
 function decode(stringToDecode) {
-  for (let index = 0; index < stringToDecode.length; index += 1) {
-    switch (stringToDecode[index]) {
-    case '1':
-      stringToDecode = stringToDecode.replace('1', 'a');
-      break;
-    case '2':
-      stringToDecode = stringToDecode.replace('2', 'e');
-      break;
-    case '3':
-      stringToDecode = stringToDecode.replace('3', 'i');
-      break;
-    case '4':
-      stringToDecode = stringToDecode.replace('4', 'o');
-      break;
-    case '5':
-      stringToDecode = stringToDecode.replace('5', 'u');
-      break;
-    default:
-      break;
-    }
-  }
+  let changeToA = /1/gi;
+  let changeToE = /2/gi;
+  let changeToI = /3/gi;
+  let changeToO = /4/gi;
+  let changeToU = /5/gi;
+
+  stringToDecode = stringToDecode.replace(changeToA, 'a');
+  stringToDecode = stringToDecode.replace(changeToE, 'e');
+  stringToDecode = stringToDecode.replace(changeToI, 'i');
+  stringToDecode = stringToDecode.replace(changeToO, 'o');
+  stringToDecode = stringToDecode.replace(changeToU, 'u');
   return stringToDecode;
 }
 
@@ -137,4 +123,5 @@ module.exports = {
   highestCount,
   highestNumber,
   splitSentence,
+  changeToFizzBuzz,
 };
